@@ -50,7 +50,7 @@ curl_close($curl);
 
   // check payment status if payment success then redirect to success page else redirect to error page
   if($res->success){
-    header('location:http://localhost/hemant-proj/php/phonepay/success.php');
+    header('location:your success url');
     $_SESSION['code'] = $res->code;
     $_SESSION['message'] = $res->message;
     $_SESSION['transection_id'] = $res->data->transactionId;
@@ -60,7 +60,7 @@ curl_close($curl);
 
 
   }else{
-    header('location:http://localhost/hemant-proj/php/phonepay/error.php');
+    header('location:your error page url');
     $_SESSION['code'] = $res->code;
     $_SESSION['message'] = $res->message;
     $_SESSION['declined_description'] = $res->data->responseCodeDescription;
